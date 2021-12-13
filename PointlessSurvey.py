@@ -43,7 +43,12 @@ def GetBadge():
     rcloneexe = r"C:\Users\Daniel\Desktop\Badges\rclone.exe "
     fuckingshit = subprocess.call(rcloneexe + "copy " + directory + " DriveCovid:CovidBadges",  shell=True)
   #  print(fuckingshit)
-GetBadge()
+
+while True:
+    CompleteSymptomSurvey()
+    time.sleep(120)
+    GetBadge()
+    time.sleep(600)
 
 #from datetime import datetime
 
