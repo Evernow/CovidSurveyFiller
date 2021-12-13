@@ -35,6 +35,8 @@ def GetBadge():
     driver.find_element_by_xpath('//*[@id="showQuarantineBadge"]').click()
     time.sleep(1)
     driver.save_screenshot(directory)
+    driver.close()
+    driver.quit()
     
     from PIL import Image
     im = Image.open(directory)
@@ -42,8 +44,8 @@ def GetBadge():
     im1.save((directory), 'png')
     rcloneexe = r"C:\Users\Daniel\Desktop\Badges\rclone.exe "
     fuckingshit = subprocess.call(rcloneexe + "copy " + directory + " DriveCovid:CovidBadges",  shell=True)
-  #  print(fuckingshit)
-
+    driver.close()
+    driver.quit()
 while True:
     CompleteSymptomSurvey()
     time.sleep(120)
